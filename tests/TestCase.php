@@ -4,9 +4,9 @@ namespace Dwaincore\Authmgt\Tests;
 
 use Dwaincore\Authmgt\AuthmgtServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
-
 use Illuminate\Support\Facades\Route;
+
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
