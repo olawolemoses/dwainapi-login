@@ -6,6 +6,8 @@ use Dwaincore\Authmgt\AuthmgtServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
+use Illuminate\Support\Facades\Route;
+
 class TestCase extends Orchestra
 {
     public function setUp(): void
@@ -15,6 +17,8 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'Dwaincore\\Authmgt\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        Route::authmgt('authentication');
     }
 
     protected function getPackageProviders($app)
