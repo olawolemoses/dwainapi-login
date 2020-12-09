@@ -2,8 +2,8 @@
 
 namespace Dwaincore\Authmgt;
 
-use Illuminate\Support\ServiceProvider;
 use Dwaincore\Authmgt\Commands\AuthmgtCommand;
+use Illuminate\Support\ServiceProvider;
 
 class AuthmgtServiceProvider extends ServiceProvider
 {
