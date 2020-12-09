@@ -9,4 +9,12 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    /** @test */
+    public function it_can_display_the_route_from_auth() {
+        $this
+            ->get('authentication')
+            ->assertOk();
+
+    }
 }
