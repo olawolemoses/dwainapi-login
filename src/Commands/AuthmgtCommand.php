@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace Dwaincore\Authmgt\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class AuthmgtCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'authmgt';
 
     public $description = 'My command';
 

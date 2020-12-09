@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Dwaincore\Authmgt\Tests;
 
 class ExampleTest extends TestCase
 {
