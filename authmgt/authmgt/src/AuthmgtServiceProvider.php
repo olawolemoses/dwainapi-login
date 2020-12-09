@@ -3,9 +3,6 @@
 namespace Dwaincore\Authmgt;
 
 use Dwaincore\Authmgt\Commands\AuthmgtCommand;
-use Dwaincore\Authmgt\Http\Controllers\AuthenticateController;
-
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class AuthmgtServiceProvider extends ServiceProvider
@@ -33,25 +30,12 @@ class AuthmgtServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->registerRoutes();
-
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'authmgt');
-
-
     }
 
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/authmgt.php', 'authmgt');
-    }
-
-    protected function registerRoutes()
-    {
-        Route::macro('authmgt', function ($prefix) {
-            Route::prefix($prefix)->group(function () {
-                Route::get('/', '\\' . AuthenticateController::class);
-            });
-        });
     }
 
     public static function migrationFileExists(string $migrationFileName): bool
