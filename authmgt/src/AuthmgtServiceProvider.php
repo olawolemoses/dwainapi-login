@@ -4,6 +4,7 @@ namespace Dwaincore\Authmgt;
 
 use Dwaincore\Authmgt\Commands\AuthmgtCommand;
 use Dwaincore\Authmgt\Http\Controllers\AuthenticateController;
+use Dwaincore\Authmgt\Http\Controllers\HomeController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -49,7 +50,10 @@ class AuthmgtServiceProvider extends ServiceProvider
     {
         Route::macro('authmgt', function ($prefix) {
             Route::prefix($prefix)->group(function () {
-                Route::get('/', '\\' . AuthenticateController::class);
+                Route::middleware(['auth:sanctum'])->group(function () {
+                    Route::get('/home', '\\' . HomeController::class);
+                });
+                Route::post('/login', '\\' . AuthenticateController::class)->name('login');
             });
         });
     }

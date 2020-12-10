@@ -5,6 +5,9 @@ namespace Dwaincore\Authmgt\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
+use Illuminate\Support\Facades\Auth;
+use Hash;
+
 class AuthenticateController
 {
     public function __invoke(Request $request)
@@ -38,12 +41,12 @@ class AuthenticateController
               'token_type' => 'Bearer',
             ]);
 
-          } catch (Exception $error) {
+        } catch (Exception $error) {
             return response()->json([
-              'status_code' => 500,
-              'message' => 'Error in Login',
-              'error' => $error,
+                'status_code' => 500,
+                'message' => 'Error in Login',
+                'error' => $error,
             ]);
-          }
+        }
     }
 }
