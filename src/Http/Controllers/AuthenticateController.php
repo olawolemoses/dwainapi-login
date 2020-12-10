@@ -4,7 +4,7 @@ namespace Dwaincore\Authmgt\Http\Controllers;
 
 class AuthenticateController
 {
-    public function __invokde()
+    public function __invoke()
     {
         return 'ok';
     }

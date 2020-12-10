@@ -4,6 +4,8 @@ namespace Dwaincore\Authmgt\Tests;
 
 use Dwaincore\Authmgt\AuthmgtServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Route;
+
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -15,6 +17,8 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'Dwaincore\\Authmgt\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        Route::authmgt('authentication');
     }
 
     protected function getPackageProviders($app)
